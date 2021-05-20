@@ -1,3 +1,12 @@
+#Install Stateplan
+pip install stateplane
+
+# Or, download the repository and run:
+#python setup.py install
+
+
+
+
 import stateplane
 
 # Returns the EPSG value for this (lon, lat)
