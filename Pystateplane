@@ -1,0 +1,26 @@
+import stateplane
+
+# Returns the EPSG value for this (lon, lat)
+stateplane.identify(-73.2, 43.2)
+# 32145
+
+# Return a short name for the projection
+stateplane.identify(-88.2, 41.2, 'short')
+# 'IL_E'
+
+# Speed up the process by specifying a state FIPS code
+stateplane.identify(-88.2, 41.2, 'short', statefp='17')
+# 'IL_E'
+
+# Speed up the process even more by specifying a county FIPS code
+# These two calls are equivalent
+stateplane.identify(None, None, 'short', countyfp='36005')
+stateplane.identify(None, None, 'short', statefp='36', countyfp='005')
+# 'NY_LI'
+
+stateplane.identify(-80.1, 36.2, fmt='short')
+# 'NC'
+
+# returns the FIPS code of the projection
+stateplane.identify(-80.1, 36.2, fmt='fips')
+'3200'
